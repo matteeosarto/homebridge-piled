@@ -117,7 +117,7 @@ export class GatePlatformAccessory {
   async getTargetState() {
     //this.platform.log.debug('GateControl getTargetState');
 
-    if(!this.myTargetDoorState)
+    if(this.myTargetDoorState === null)
     {
       return this.platform.Characteristic.TargetDoorState.CLOSED;
     }
@@ -128,7 +128,7 @@ export class GatePlatformAccessory {
   async getCurrentState() {
     //this.platform.log.debug('GateControl getCurrentState');
 
-    if(!this.myCurrentDoorState)
+    if(this.myCurrentDoorState === null)
     {
       return this.platform.Characteristic.CurrentDoorState.CLOSED;
     }
